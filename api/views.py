@@ -45,12 +45,13 @@ def latestData(request):
                 """ Fetch data from db and set into Cache"""
                 message = "Data Coming from DB"
                 latestData = get_data(filter_station)
-                cache.set(filter_station, latestData,timeout = 300)           
-            
-        serializer = MetarSerializer(latestData,many=False)
-        context ={'data':serializer.data,'message':message}
+                cache.set(filter_station, latestData,timeout = 300)      
 
-        return render(request,"api/home.html",context)
+        if(latestData):
+            """ Show only keyword is right """
+            serializer = MetarSerializer(latestData,many=False)
+            context ={'data':serializer.data,'message':message}
+            return render(request,"api/home.html",context)        
 
     context = {"message":"No Data Fetched. Please try to search right keyword"}
 

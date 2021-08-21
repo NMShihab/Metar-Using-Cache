@@ -48,4 +48,11 @@ You can also Search with Url: [http://127.0.0.1:8000/metar/info/?scode=&nocache=
 
 after scode= please give the station code. Use nocache=1 if and only if you want your data come from database and cached has been cleared otherwise keep that empty.
 
+##Admin
+
+URL: (http://127.0.0.1:8000/admin/)[http://127.0.0.1:8000/admin/]
+
+username: admin
+password: password
+
 ## Thank You
