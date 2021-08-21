@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metar</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <form method="get">
+        <div class="mx-auto text-center d-flex">
+          <input
+            class="form-control"
+            name="scode"
+            placeholder="Station code"
+            style="width: 400px"
+          />
+          <input
+            class="form-control"
+            name="nocache"
+            placeholder="nocache"
+            style="width: 400px"
+          />
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </form>
+      <div class="container mt-5">
+        {% if data %}
+        <h1>{{message}}</h1>
+        <p>{{data}}</p>
+        {% else %}
+        <h3>{{message}}</h3>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
